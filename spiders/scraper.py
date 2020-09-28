@@ -5,16 +5,16 @@ class ScraperSpider(scrapy.Spider):
     name = 'scraper'
     page_number = 2
     # allowed_domains = ['brickset.com']
-    start_urls = [
-        'https://brickset.com/sets/year-2020/page-1'
-    ]
+    # start_urls = [
+    #     'https://brickset.com/sets/year-2020/page-1'
+    # ]
     # above code is a short cut for all following:
-    # def start_requests(self):
-    #     start_urls = [
-    #         'https://brickset.com/sets/year-2020/page-1'
-    #     ]
-    #     for url in start_urls:
-    #         yield scrapy.Request(url=url, callback=self.parse)
+    def start_requests(self):
+        start_urls = [
+            'https://brickset.com/sets/year-2020/page-1'
+        ]
+        for url in start_urls:
+            yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
         items = BricksetItem()
