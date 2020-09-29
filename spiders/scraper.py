@@ -12,7 +12,7 @@ class ScraperSpider(scrapy.Spider):
     # def start_requests(self):
     #     start_urls = [
     #         'https://brickset.com/sets/year-2020/page-1'
-    #     ]
+    #
     #     for url in start_urls:
     #         yield scrapy.Request(url=url, callback=self.parse)
 
